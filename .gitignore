@@ -1,0 +1,6 @@
+target/
+.classpath/
+.settings/
+.project/
+.idea/
+hhs-mocking-and-integration-testing.iml
