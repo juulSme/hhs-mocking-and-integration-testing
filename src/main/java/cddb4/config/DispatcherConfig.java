@@ -1,4 +1,4 @@
-package cddb4.main;
+package cddb4.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;

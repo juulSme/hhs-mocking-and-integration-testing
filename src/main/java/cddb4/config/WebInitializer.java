@@ -1,4 +1,4 @@
-package cddb4.main;
+package cddb4.config;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletRegistration;

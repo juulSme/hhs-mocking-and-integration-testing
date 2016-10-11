@@ -1,4 +1,4 @@
-package cddb4.main;
+package cddb4.config;
 
 import java.util.Properties;
 
@@ -18,8 +18,8 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 
 @Configuration
 @EnableTransactionManagement
-@ComponentScan({ "cddb4.main" })
-@PropertySource(value = { "classpath:application.properties", "classpath:mysqllogin.properties"} )
+@ComponentScan({"cddb4.config"})
+@PropertySource(value = { "classpath:application.properties"} )
 public class HibernateConfig {
 	
 	@Autowired
@@ -39,8 +39,8 @@ public class HibernateConfig {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName(environment.getRequiredProperty("jdbc.driverClassName"));
         dataSource.setUrl(environment.getRequiredProperty("jdbc.url"));
-        dataSource.setUsername(environment.getRequiredProperty("jdbc.username"));
-        dataSource.setPassword(environment.getRequiredProperty("jdbc.password"));
+//        dataSource.setUsername(environment.getRequiredProperty("jdbc.username"));
+//        dataSource.setPassword(environment.getRequiredProperty("jdbc.password"));
         return dataSource;
     }
      
