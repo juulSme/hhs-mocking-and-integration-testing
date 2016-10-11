@@ -64,7 +64,7 @@ public class DataImporter {
             reader.lines()
                     .map(s -> {
                         String[] t = s.split(";");
-                        if(t.length != 4) throw new RuntimeException("Illegal album format.");
+                        if(t.length != 4) throw new RuntimeException("Illegal track format.");
                         Track track = new Track();
                         track.setAlbum(albumService.findByArtistName(t[0], t[1]));
                         track.setTracknr(Integer.parseInt(t[2]));
