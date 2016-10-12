@@ -121,6 +121,7 @@
             <version>${hamcrest-version}</version>
             <scope>test</scope>
         </dependency>
+        <!--TODO add maven dependency for Mockito 2.2.0-->
     </dependencies>
 
 
