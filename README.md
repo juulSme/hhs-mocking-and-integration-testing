@@ -1,36 +1,17 @@
-# CDDB demo project
+# CDDB project
 
-- Offers REST service on /cddb4/rest
-- Offers HTML/AngularJS client on /cddb4/angularclient
+- Offers REST service on /cddb/rest
+- Offers HTML/AngularJS client on /cddb/angularclient
 
-This demo project consists of a CD metadata database server and a client for interacting with it. The server is written in Java and uses the Spring (4.2.4) and Hibernate (5.0.7) frameworks to manage an underlying MySQL database and expose a REST service. The client is written separately in HTML5, CSS3 and AngularJS (1.4.9) and is merely served out of the same war file. The two communicate through HTTP verbs and pass JSON objects to each other. The project runs on an Apache Tomcat server (8.0). The database structure is included in src/main/resources/database.sql
+This demo project consists of a CD metadata database server and a client for interacting with it. The server is written in Java and uses the Spring (4.2.4) and Hibernate (5.0.7) frameworks to manage an underlying MySQL database and expose a REST service. The client is written separately in HTML5, CSS3 and AngularJS (1.4.9) and is merely served out of the same war file. The two communicate through HTTP verbs and pass JSON objects to each other. The project runs on an Apache Tomcat server. The database structure is included in src/main/resources/database.sql
 
-Additionally, the following tools have been used in development:
-- Git (naturally)
-- Maven
-- LogBack
-- Bower
-- NPM
-- Grunt
-- Eclipse (server)
-- Netbeans (client)
+The backend is the focus today. It contains four packages.
+The dao packages contains "data access objects" which are the bottom layer 
+closest to the database. The service package contains the business logic 
+which determines the behavior of the program. The rest package contains a 
+rest-controller, which exposes the data to the outside world and allows CRUD 
+operations via HTTP for albums and tracks. The util package contains a data importer 
+which allows you to import album and track info from CSV files in the resources folder. 
 
-Project status
-- REST service fully exposed by server
-- REST service fully consumed by client
-
-Possible refactoring (server):
-- only one service for albums/tracks
-- move validation over to service
-- use external validator instead of @valid annotations
-
-Possible refactoring (client):
-- The controller needs to be split up badly, it now combines view operations for albums and tracks and CRUD operations for both as well.
-- The entire client is served out of One Index.html To Rule Them All, so that could do with some splitting as well
-
-Possible extra development:
-- add security / login
-
-
-
-
+Start the application with the tomcat7:run command. You can approach the backend 
+[here](localhost:8080/cddb/rest) and the Angular client [here](localhost:8080/cddb/angularclient).
